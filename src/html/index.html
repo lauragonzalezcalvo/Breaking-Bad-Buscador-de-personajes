@@ -9,40 +9,38 @@
 </head>
 
 <body>
-  <header>
-    <header>
+    <header class="header">
       <h1 class="header__title">Breaking Bad</h1>
-      <form class="js_form">
-        <label for="search" class="form__label">Buscar: </label>
-        <input type="text" name="search" id="search" class="js_search form__input-text" />
+      <form class="header__form js_form">
+        <label for="search" class="header__form--label">Buscar: </label>
+        <input type="text" name="search" id="search" class="js_search header__form--input" />
+        <button class="header__form--btn">Enviar</button>
       </form>
     </header>
-  </header>
   <main class="main">
 
     <section class="favourites js-favourites">
-      <ul></ul>
+      <h2 class="favourites__Title">Favourites</h2>
+      <ul class="favourites___List">
+     
+      </ul>
     </section>
 
     <section class="characters js-characters">
-      <h2>Characters</h2>
-      <ul class="">
-        <li>
+      <h2 class="characters__Title">Characters</h2>
+      <ul class="characters___List js-characterList">
+        <li class="characters__Loading">
           Cargando...
         </li>
-        <li>
-          <article class="">
-            <img src="" alt="" class="">
-            <h3 class=""></h3>
-            <p class=""></p>
-          </article>
-        </li>
+       
+        <!-------------------- aquí iría la lista de personajes ----------------->
+  
       </ul>
     </section>
   
   </main>
-  <footer>
-    <p></p>
+  <footer class="footer">
+    <p class="footer__p">holi</p>
   </footer>
   <script src="./assets/js/main.js"></script>
 </body>
