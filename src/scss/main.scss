@@ -9,21 +9,43 @@
 @import 'core/variables';
 
 .header{
-background-image: 'https://okdiario.com/img/series/2015/11/Breaking-Bad.jpg';
-height: 45vh;
+    font-family: $font-roboto;
+    background-image: url("https://okdiario.com/img/series/2015/11/Breaking-Bad.jpg");
+    object-fit: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    height: 45vh;
+    &__section{
+        background-color: $white;
+        width: 700px;
+        height: 60px;
+        position: absolute;
+        left: 26%;
+        top: 39%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 5px 5px 20px rgb(174, 152, 110); 
+    }
     &__title{
 
     }
     &__form{
-
-        &--label{
-
-        }
+        
+        
         &--input{
-
+            width: 550px;
+            height: 20px;
+            border:solid orange 2px;
+            
         }
         &--btn{
-
+            background-color: orange;
+            border: none;
+            color:white;
+            padding: 5px;
         }
     }
 
@@ -33,31 +55,46 @@ height: 45vh;
 
 .main{
     display: flex;
-    font-family: $font-roboto;
-    width: 100%;
+    font-family:$font-roboto;
+    padding-top: 100px;
+    background-color: $white;
 }
 
 .favourites{
-    background-color: rgb(215, 169, 71);
-   
+  
+   padding-left: 50px;
    &__Title{
     width: 235px;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    color: $orange;
    }
    &__List{
+   
 
     &-characher{
-
     }
    }
 
 }
 .characters{
-    background-color: rgb(94, 62, 202);
+    
     display: flex;
     flex-direction: column;
-
+    width: 100vw;
+    padding-bottom: 43px;
+  
     &__Title{
         text-align: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: 20px;
+        font-weight: 600;
+        color: $orange;
+
         // width: 100%;
     }
     &___List{
@@ -65,6 +102,7 @@ height: 45vh;
         flex-wrap: wrap;
         justify-content: center;
         width: 100%;
+        
     }
     &__Loading{
 
@@ -76,12 +114,15 @@ height: 45vh;
         margin-left: 20px;
         width: 200px;
         height: 300px;
-
-
-
+        padding-bottom: 15px;
+        margin: 10px;
+        box-shadow: 5px 5px 20px rgb(174, 152, 110); 
         &___Item{
             text-align: center;
             padding-top: 10px;
+            
+           
+    
             &--img{
 
                 width: 172px;
@@ -90,20 +131,29 @@ height: 45vh;
             }
             &--h3{
                 padding-top: 5px;
-               font-size: 20px;
+                font-size: 20px;
             }
             &--p{
-                padding-bottom: 20px; //este padding no lo coge se lo dare a la seccion
+                opacity: 70%;
             }
         }
     }
 
 }
 .footer{
-    background-color: orange;
-        position: fixed;
+    background-color:$orange;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
     &__p{
-        
+        font-family:$font-roboto;
+        font-weight: 200;
+      
 
     }
 }
@@ -111,5 +161,6 @@ height: 45vh;
 // clases para marcar como favoritos un article
 
 .selected{
-    background-color: aqua;
+    background-color: $light-orange;
+    
 }
