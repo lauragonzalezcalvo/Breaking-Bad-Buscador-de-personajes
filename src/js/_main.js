@@ -11,6 +11,7 @@ const characterList = document.querySelector('.js-characterList');
 const btn = document.querySelector('.js-btn');
 const input = document.querySelector('.js_input');
 const favouritesList = document.querySelector('.js-favList');
+const resetBtn = document.querySelector('.js-resetBtn');
 
 // -----------------------------VARIABLES GLOBALES, la lista de personajes y la lista de personajes favoritos.--------------
 
@@ -124,7 +125,14 @@ function searchCharacters(event){
   renderCharacters(filteredCharacters);
 }
 
-
+function resetFav(ev){
+  ev.preventDefault();
+  // debugger;
+  localStorage.removeItem('characterFav');
+  favouritesCharacters.length= [];
+  renderCharacters (allCharacters);
+  favouritesList.innerHTML ='';
+}
 
 
 //--------------------------------------------------------- EVENTOS------------------------------------------------
@@ -133,7 +141,7 @@ function searchCharacters(event){
 
 
 btn.addEventListener('click', searchCharacters);
-
+resetBtn.addEventListener('click', resetFav);
 
 
 // -----------------------------------------CÓDIGO QUE SE EJECUTA AL CARGAR LA PÁGINA-------------------------------
