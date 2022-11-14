@@ -1,68 +1,50 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Adalab Web Starter Kit</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./assets/css/main.css" />
-    <link rel="icon" href="./assets/images/favicon.png" />
-  </head>
 
-  <body>
-    <div class="page">
-      <header class="page__header">
-        <img src="./assets/images/logo-adalab.png" alt="Adalab">
-        <h1>Bienvenidos a Adalab</h1>
-      </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Breaking Bad</title>
+  <link rel="stylesheet" href="./assets/css/main.css" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+</head>
 
-      <main class="page__main">
-        <h2>Este es el starter kit de Adalab</h2>
-        <p>Lo usamos para aprender:</p>
-        <ul class="main__list">
-          <li>Sass</li>
-          <li>HTML partials</li>
-          <li>Gulp</li>
-          <li>y muchas cosas más</li>
-        </ul>
-        <p>Si quieres saber cúales son las rutas correctas para:</p>
-        <ul class="main__list">
-          <li>
-            una <code class="code">&lt;img /&gt;</code> mira el fichero
-            <code class="code">./src/html/partials/header.html</code>.
-          </li>
-          <li>
-            y para un <code class="code">background-image</code> mira el fichero
-            <code class="code">./src/html/scss/layout/_page.scss</code>.
-          </li>
-        </ul>
-        <p>
-          Si quieres saber cómo usar un partial HTML dentro de otro partial, busca en la carperta
-          <code class="code">./src/html/index.html</code> y
-          <code class="code">./src/html/partials/main.html</code>, y verás cómo estamos creando estos
-          enlaces:
-        </p>
-        <ul class="main__list">
-          <li>
-            <a class="link__adalab" href="https://adalab.es">Adalab</a>
+<body>
+    <header class="header">
+      <section  class="header__section">
+      <!-- <h1 class="header__title">Breaking Bad</h1> -->
+      <form class="header__form js_form">
+        <!-- <label for="search" class="header__form--label">Buscar: </label> -->
+        <input placeholder="Example: Walter White" type="text" name="search" id="search" class="js_input header__form--input" />
+        <button class="js-btn header__form--btn">Buscar</button>
+      </form>
+    </section>
+    </header>
+  <main class="main">
 
-          </li>
-          <li>
-            <a class="" href="./more-info.html">Más info del starter kit</a>
+    <section class="favourites js-favourites">
+      <h2 class="favourites__Title">Favourites</h2>
+      <ul class="js-favList  favourites___List">
+      </ul>
+    </section>
 
-          </li>
-        </ul>
-      </main>
+    <section class="characters js-characters">
+      <h2 class="characters__Title">Characters</h2>
+      <ul class="characters___List js-characterList">
+        <li class="characters__Loading">
+          Cargando...
+        </li>
+       
+        <!-------------------- aquí iría la lista de personajes ----------------->
+  
+      </ul>
+    </section>
+  
+  </main>
+  <footer class="footer">
+    <p class="footer__p">Breaking Bad is regarded as one of the greatest television series of all time and with 16 Primetime Emmy Awards © Adalab 2022</p>
+  </footer>
+  <script src="./assets/js/main.js"></script>
+</body>
 
-      <footer class="page__footer">
-        <small>
-          &copy; Todos los derechos reservados
-          <a class="link__adalab" href="https://adalab.es">Adalab</a>
-
-        </small>
-      </footer>
-
-    </div>
-    <script src="./assets/js/main.js"></script>
-  </body>
 </html>
