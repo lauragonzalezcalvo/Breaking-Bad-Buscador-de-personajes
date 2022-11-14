@@ -1,5 +1,4 @@
-/*@import 'core/variables';
-@import 'components/code';
+/*@import 'components/code';
 @import 'components/links';
 @import 'layout/page';
 @import 'layout/header';
@@ -7,75 +6,104 @@
 @import 'pages/index';
 */
 @import 'core/reset';
-
+@import 'core/variables';
 
 .header{
-   
+background-image: 'https://okdiario.com/img/series/2015/11/Breaking-Bad.jpg';
+height: 45vh;
     &__title{
-        
+
     }
     &__form{
-        
+
         &--label{
-            
+
         }
         &--input{
-            
+
         }
         &--btn{
-            
+
         }
     }
-   
+
 }
 
 
 
 .main{
-    background-color: rgb(161, 145, 145);
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    // display: grid;
-    // grid-template-columns: 1fr 250px;
+    font-family: $font-roboto;
+    width: 100%;
 }
 
 .favourites{
+    background-color: rgb(215, 169, 71);
+   
    &__Title{
-    
+    width: 235px;
    }
    &__List{
-    background-color: aquamarine;
+
+    &-characher{
+
+    }
    }
+
 }
 .characters{
+    background-color: rgb(94, 62, 202);
+    display: flex;
+    flex-direction: column;
+
     &__Title{
-       
+        text-align: center;
+        // width: 100%;
     }
     &___List{
-        
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
     }
     &__Loading{
-        
+
     }
     &___Articles{
+        flex-direction: column;
+        align-items: center;
         cursor: pointer;
+        margin-left: 20px;
+        width: 200px;
+        height: 300px;
+
+
+
         &___Item{
+            text-align: center;
+            padding-top: 10px;
             &--img{
-                width: 100px;
+
+                width: 172px;
+                height: 250px;
+                object-fit: cover;
             }
             &--h3{
-                
+                padding-top: 5px;
+               font-size: 20px;
             }
             &--p{
-    
+                padding-bottom: 20px; //este padding no lo coge se lo dare a la seccion
             }
         }
     }
-    
+
 }
 .footer{
+    background-color: orange;
+        position: fixed;
     &__p{
+        
 
     }
 }
