@@ -1,0 +1,35 @@
+.header{
+    font-family: $font-roboto;
+    background-image: url("https://okdiario.com/img/series/2015/11/Breaking-Bad.jpg");
+    object-fit: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 45vh;
+    &__section{
+        background-color: $white;
+        width: 700px;
+        height: 60px;
+        position: absolute;
+        left: 26%;
+        top: 39%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 5px 5px 20px rgb(174, 152, 110); 
+    }
+    &__form{
+        &--input{
+            width: 550px;
+            height: 20px;
+            border:solid orange 2px;
+        }
+        &--btn{
+            background-color: orange;
+            border: none;
+            color:white;
+            padding: 5px;
+        }
+    }
+
+}

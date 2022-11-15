@@ -1,55 +1,12 @@
 /*@import 'components/code';
 @import 'components/links';
 @import 'layout/page';
-@import 'layout/header';
-@import 'layout/footer';
 @import 'pages/index';
 */
 @import 'core/reset';
 @import 'core/variables';
-
-.header{
-    font-family: $font-roboto;
-    background-image: url("https://okdiario.com/img/series/2015/11/Breaking-Bad.jpg");
-    object-fit: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    
-    height: 45vh;
-    &__section{
-        background-color: $white;
-        width: 700px;
-        height: 60px;
-        position: absolute;
-        left: 26%;
-        top: 39%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        box-shadow: 5px 5px 20px rgb(174, 152, 110); 
-    }
-    &__title{
-
-    }
-    &__form{
-        
-        
-        &--input{
-            width: 550px;
-            height: 20px;
-            border:solid orange 2px;
-            
-        }
-        &--btn{
-            background-color: orange;
-            border: none;
-            color:white;
-            padding: 5px;
-        }
-    }
-
-}
+@import 'layout/header';
+@import 'layout/footer';
 
 
 
@@ -66,6 +23,7 @@
    display: flex;
    flex-direction: column;
    align-items: center;
+
    &__resetBtn{
     background-color: $light-orange;
     border-radius: 5%;
@@ -74,6 +32,7 @@
     cursor: pointer;
     width: 80px;
     height: 30px;
+    margin-top:18px;
  
    }
    &__Title{
@@ -85,15 +44,8 @@
     font-weight: 600;
     color: $orange;
    }
-   &__List{
-    
-    &-characher{
-    }
-   }
-
 }
 .characters{
-    
     display: flex;
     flex-direction: column;
     width: 100vw;
@@ -107,18 +59,23 @@
         font-weight: 600;
         color: $orange;
 
-        // width: 100%;
+
     }
     &___List{
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         width: 100%;
-        
     }
     &__Loading{
-
-    }
+        font-weight: 700;
+        font-size: 20px;
+        padding: 12px 6px 0px 13px;
+        text-align: center;
+        
+    } 
+   
+    
     &___Articles{
         flex-direction: column;
         align-items: center;
@@ -132,9 +89,6 @@
         &___Item{
             text-align: center;
             padding-top: 10px;
-            
-           
-    
             &--img{
 
                 width: 172px;
@@ -155,23 +109,7 @@
     }
 
 }
-.footer{
-    background-color:$orange;
-    position: fixed;
-    bottom: 0px;
-    width: 100%;
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    &__p{
-        font-family:$font-roboto;
-        font-weight: 200;
-      
 
-    }
-}
 
 // clases para marcar como favoritos un article
 
@@ -179,6 +117,15 @@
     background-color: $light-orange;
     
 }
+
+// clase para ocultar seccion de favourites.
+
+.hidden{
+display: none;
+}
+
+//hover del botón reset
+
 .favourites__resetBtn:hover{
     background-color: $orange;
 }

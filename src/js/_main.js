@@ -26,7 +26,9 @@ let favouritesCharacters = [];
 // ponemos el id que será nuestro atributo gancho
 
 function renderOneCharacter (character){
-  // 
+
+  // hacemos esta condicion para que aparezca seleccionada favourites
+
   const characterInFavouritesIndex = favouritesCharacters.findIndex((eachCharacterObj) => eachCharacterObj.char_id === parseInt(character.char_id));
   let classFavourite = '';
   if (characterInFavouritesIndex === -1 ){
@@ -54,7 +56,6 @@ function renderCharacters (allCharacters){
     characterList.innerHTML += renderOneCharacter (allCharacters[i]);
   }
   addCharacterListener ();
-  
 }
 
 // ------Esta función addCharacterListener, nos permite hacer click y crear un bucle para que pueda clicar en cada uno de ellos-
@@ -65,35 +66,27 @@ function addCharacterListener (){
   for (const character of allCharactersArticles) {
     character.addEventListener('click', handleCharacters);
   }
-  
 }
 
 //esta función la hemos llamado con el addEventListener para que nos permita marcar de momento como favoritos y añadir clase selected
 
 function handleCharacters (event){
-  console.log('has hecho click');
 
   event.currentTarget.classList.toggle('selected');
 
-  console.log(event.currentTarget.id);
-
-  //creamos una variable para meter el .find y que me traiga el objeto al que he dado click. Al cumplirse la condición.
+  //creamos una variable para utilizar el .find y que me traiga el objeto al que he dado click. Al cumplirse la condición.
 
   const SelectedCharacters = allCharacters.find ((eachCharacterObj) => eachCharacterObj.char_id === parseInt(event.currentTarget.id));
-  console.log(SelectedCharacters);
 
- //utilizamos finIndex
+ //utilizamos finIndex. Condición: si existe ese id en la lista te la añade si ya está no te la añade
 
   const characterInFavouritesIndex = favouritesCharacters.findIndex((eachCharacterObj) => eachCharacterObj.char_id === parseInt(event.currentTarget.id));
-  console.log(characterInFavouritesIndex);
-
-  // condición: si existe ese id en la lista te la añade si ya está no te la añade
 
   if (characterInFavouritesIndex === -1 ){
     favouritesCharacters.push(SelectedCharacters);
     localStorage.setItem('characterFav', JSON.stringify(favouritesCharacters)); 
   }
-  // aqui lo que hacemos esq si volvemos a clickar nos lo quite de fav por lo que tenemos que cambiar a findIndex en vez de find.ESte else es un bonus
+  // Si volvemos a clickar nos lo quite de fav por eso utilizamos el findIndex en vez de find.
 
   else {
     favouritesCharacters.splice(characterInFavouritesIndex, 1);
@@ -110,28 +103,25 @@ function renderFavCharacters (){
     html += renderOneCharacter (character);
   }
   favouritesList.innerHTML = html;
-  
 }
 
   // recoger el valor de value y cuando le demos a search compararlo con el fetch y mostrarlo
-  // //de cada uno de mis personajes me va afiltrar que su nombre incluya lo que hemos escrito.
+  //de cada uno de mis personajes me va a filtrar que su nombre incluya lo que hemos escrito.
 
 function searchCharacters(event){
   event.preventDefault();
-  console.log('hiciste click al boton');
   const inputValue = input.value.toLowerCase();
   const filteredCharacters = allCharacters.filter((character) => character.name.toLowerCase().includes(inputValue));
-  console.log(filteredCharacters);
   renderCharacters(filteredCharacters);
 }
 
 function resetFav(ev){
   ev.preventDefault();
-  // debugger;
   localStorage.removeItem('characterFav');
   favouritesCharacters.length= [];
   renderCharacters (allCharacters);
   favouritesList.innerHTML ='';
+  resetBtn.classList.remove('hidden');
 }
 
 
